@@ -1,0 +1,68 @@
+﻿Ticker,Name,Country,Model,C1_Score,C1_Conf,C2_Score,C2_Conf,C3_Score,C3_Conf,C4_Score,C4_Conf,C5_Score,C5_Conf
+NIO,NIO Inc.,China,GPT-5.2 Instant,1,68,-1,76,1,66,1,62,1,68
+NIO,NIO Inc.,China,Gemini 3.5 Flash,1,75,1,75,1,75,1,75,1,75
+NIO,NIO Inc.,China,Claude Sonnet 4.6,0,62,1,62,0,35,0,40,1,55
+TME,Tercent Music,China,GPT-5.2 Instant,1,78,1,76,1,71,0,78,1,80
+TME,Tercent Music,China,Gemini 3.5 Flash,1,80,1,80,1,80,1,80,1,80
+TME,Tercent Music,China,Claude Sonnet 4.6,1,55,1,62,1,42,1,55,0,55
+BABA,Alibaba,China,GPT-5.2 Instant,1,68,1,72,1,64,0,72,1,78
+BABA,Alibaba,China,Gemini 3.5 Flash,1,80,1,80,1,80,0,80,1,80
+BABA,Alibaba,China,Claude Sonnet 4.6,1,62,1,62,1,42,0,52,1,52
+JD,JD.com,China,GPT-5.2 Instant,1,72,1,68,1,67,0,70,1,74
+JD,JD.com,China,Gemini 3.5 Flash,1,80,1,75,1,75,0,85,1,75
+JD,JD.com,China,Claude Sonnet 4.6,1,62,0,62,-1,42,0,52,1,62
+PDD,PDD Holdings,China,GPT-5.2 Instant,1,68,1,72,1,66,1,74,1,73
+PDD,PDD Holdings,China,Gemini 3.5 Flash,1,75,1,75,1,75,0,85,1,75
+PDD,PDD Holdings,China,Claude Sonnet 4.6,1,55,1,60,1,42,1,62,1,55
+XPEV,Xpeng,China,GPT-5.2 Instant,1,68,1,67,1,68,-2,89,1,77
+XPEV,Xpeng,China,Gemini 3.5 Flash,1,75,1,75,1,75,-1,85,1,75
+XPEV,Xpeng,China,Claude Sonnet 4.6,1,55,1,58,1,52,-2,78,0,52
+TCEHY,Tercent,China,GPT-5.2 Instant,1,76,1,78,1,78,1,71,2,84
+TCEHY,Tercent,China,Gemini 3.5 Flash,1,80,1,80,1,80,0,85,1,80
+TCEHY,Tercent,China,Claude Sonnet 4.6,1,62,1,62,1,42,1,62,1,62
+LI,Li Auto,China,GPT-5.2 Instant,1,66,1,74,1,67,-1,82,0,78
+LI,Li Auto,China,Gemini 3.5 Flash,0,70,0,70,0,70,-1,80,0,70
+LI,Li Auto,China,Claude Sonnet 4.6,0,52,0,62,-1,52,-1,62,0,52
+BIDU,Baidu,China,GPT-5.2 Instant,1,66,1,72,1,66,-1,76,1,78
+BIDU,Baidu,China,Gemini 3.5 Flash,1,75,1,75,1,75,-1,80,1,75
+BIDU,Baidu,China,Claude Sonnet 4.6,0,52,0,62,0,38,-1,55,1,62
+NTES,NetEase,China,GPT-5.2 Instant,1,73,1,77,1,74,1,73,1,82
+NTES,NetEase,China,Gemini 3.5 Flash,1,80,1,80,1,80,0,85,1,80
+NTES,NetEase,China,Claude Sonnet 4.6,1,68,1,68,1,55,1,55,1,62
+005930.KS,삼성전자,Korea,GPT-5.2 Instant,1,74,1,72,1,72,2,88,1,82
+005930.KS,삼성전자,Korea,Gemini 3.5 Flash,2,85,2,85,2,85,1,85,2,90
+005930.KS,삼성전자,Korea,Claude Sonnet 4.6,1,62,1,72,1,62,1,55,1,72
+000660.KS,SK하이닉스,Korea,GPT-5.2 Instant,1,74,2,84,1,74,2,92,2,88
+000660.KS,SK하이닉스,Korea,Gemini 3.5 Flash,2,85,2,85,2,85,1,85,2,90
+000660.KS,SK하이닉스,Korea,Claude Sonnet 4.6,1,68,1,68,1,52,1,55,1,72
+005380.KS,현대차,Korea,GPT-5.2 Instant,1,74,1,78,1,72,1,66,1,82
+005380.KS,현대차,Korea,Gemini 3.5 Flash,1,80,1,80,1,80,1,85,1,80
+005380.KS,현대차,Korea,Claude Sonnet 4.6,1,65,1,62,1,52,1,42,1,62
+035420.KS,NAVER,Korea,GPT-5.2 Instant,1,72,1,73,1,72,0,72,1,78
+035420.KS,NAVER,Korea,Gemini 3.5 Flash,1,80,1,80,1,80,0,85,1,80
+035420.KS,NAVER,Korea,Claude Sonnet 4.6,1,72,1,68,1,62,0,40,1,62
+006400.KS,삼성SDI,Korea,GPT-5.2 Instant,0,68,0,72,1,68,1,79,0,76
+006400.KS,삼성SDI,Korea,Gemini 3.5 Flash,1,80,1,80,1,80,1,85,1,85
+006400.KS,삼성SDI,Korea,Claude Sonnet 4.6,1,62,1,62,1,52,0,35,0,62
+AAPL,Apple,US,GPT-5.2 Instant,1,72,1,76,1,74,1,74,1,88
+AAPL,Apple,US,Gemini 3.5 Flash,1,80,1,80,1,80,1,85,1,85
+AAPL,Apple,US,Claude Sonnet 4.6,1,62,1,62,1,55,1,62,1,68
+MSFT,Microsoft,US,GPT-5.2 Instant,2,88,2,83,1,78,1,79,2,88
+MSFT,Microsoft,US,Gemini 3.5 Flash,2,85,2,85,2,85,0,85,2,85
+MSFT,Microsoft,US,Claude Sonnet 4.6,1,72,1,72,1,62,1,55,2,80
+GOOGL,Alphabet,US,GPT-5.2 Instant,2,83,2,84,1,74,2,90,2,88
+GOOGL,Alphabet,US,Gemini 3.5 Flash,2,85,2,85,2,85,1,85,2,90
+GOOGL,Alphabet,US,Claude Sonnet 4.6,1,72,1,72,1,58,1,62,1,72
+META,Meta,US,GPT-5.2 Instant,2,84,2,84,1,78,2,91,2,88
+META,Meta,US,Gemini 3.5 Flash,1,80,1,80,1,80,0,85,1,80
+META,Meta,US,Claude Sonnet 4.6,1,72,1,72,1,55,2,78,1,74
+AMZN,Amazon,US,GPT-5.2 Instant,2,85,2,84,1,74,1,76,2,88
+AMZN,Amazon,US,Gemini 3.5 Flash,2,85,2,85,2,85,1,85,1,85
+AMZN,Amazon,US,Claude Sonnet 4.6,1,72,1,72,1,62,1,55,2,78
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
