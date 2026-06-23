@@ -294,7 +294,7 @@ def mvo_portfolio(expected_returns, cov_matrix, lam=2.0):
     """
     MVO: max w^T mu - lambda * w^T Sigma w
     - Covariance matrix: estimated from 6-month daily returns (annualized, *252)
-    - Lambda = 2.0: moderate risk aversion (standard in portfolio optimization literature)
+    - Lambda = 2.0: moderate risk aversion
     - Score scaling: based on actual return std (score_scale = ret_std / 2)
     - Long-only constraint: w >= 0
     """
