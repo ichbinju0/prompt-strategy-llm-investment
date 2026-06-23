@@ -51,7 +51,8 @@ Each LLM response included:
 ## Figures
 
 ### Figure 1 — Average Investment Score by Country and Prompt Condition
-![Figure 1](figures/fig1_country_condition.png)
+<img width="1786" height="806" alt="fig1_country_condition" src="https://github.com/user-attachments/assets/d9bf535b-b580-4908-a863-de3ec7807b72" />
+
 
 **What it shows:** The average investment score given by all three LLMs to stocks from each country (China, Korea, US), broken down by prompt condition (C1–C5).
 
@@ -60,7 +61,8 @@ Each LLM response included:
 ---
 
 ### Figure 2 — Score Change from Baseline (C1) by Prompt Strategy
-![Figure 2](figures/fig2_score_change.png)
+<img width="1934" height="770" alt="fig2_score_change" src="https://github.com/user-attachments/assets/1330425c-c1ee-4372-b716-2ac9185197c3" />
+
 
 **What it shows:** How much each prompt strategy changes the LLM's score compared to the no-guidance baseline (C1). Positive = scores went up, negative = scores went down.
 
@@ -69,7 +71,8 @@ Each LLM response included:
 ---
 
 ### Figure 3 — Model Confidence and Response Consistency
-![Figure 3](figures/fig3_model_confidence_behavior.png)
+<img width="1934" height="773" alt="fig3_model_confidence_behavior" src="https://github.com/user-attachments/assets/31f67091-3324-4ea0-8ea9-08cf35394e40" />
+
 
 **What it shows:** (a) The average confidence score each model reports across conditions, and (b) how much each model's confidence and scores vary across the five prompt conditions (measured as standard deviation).
 
@@ -78,7 +81,8 @@ Each LLM response included:
 ---
 
 ### Figure 4 — Confidence Score Heatmap
-![Figure 4](figures/fig4_confidence_heatmap.png)
+<img width="2072" height="668" alt="fig4_confidence_heatmap" src="https://github.com/user-attachments/assets/fa620a44-b4b5-4970-ba07-0a5745bc1151" />
+
 
 **What it shows:** A detailed heatmap of confidence scores for every combination of model, stock ticker, and prompt condition. Green = high confidence, red = low confidence.
 
@@ -87,7 +91,8 @@ Each LLM response included:
 ---
 
 ### Figure 5 — LLM Baseline Score vs. Actual 6-Month Return
-![Figure 5](figures/fig5_accuracy.png)
+<img width="1185" height="807" alt="fig5_accuracy" src="https://github.com/user-attachments/assets/8b3e2a98-5dd5-4d79-a554-c1ba6ee6b003" />
+
 
 **What it shows:** A scatter plot comparing the average C1 baseline score each stock received from the LLMs against its actual 6-month stock return. A regression line is fitted across all stocks.
 
@@ -96,7 +101,8 @@ Each LLM response included:
 ---
 
 ### Figure 6 — MVO Portfolio Performance under Five Prompt Conditions
-![Figure 6](figures/fig6_dfl_decision_quality.png)
+<img width="2084" height="847" alt="fig6_dfl_decision_quality" src="https://github.com/user-attachments/assets/1b19868b-4bf5-4d5d-8b7a-949bcc655314" />
+
 
 **What it shows:** (a) The actual portfolio return you would have achieved by using each prompt condition's LLM scores as inputs to a Mean-Variance Optimization (MVO) portfolio, compared to an equal-weight benchmark and an oracle (perfect foresight) portfolio. (b) The "regret" — how far each model/condition combination fell short of the oracle portfolio.
 
