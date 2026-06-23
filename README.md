@@ -40,7 +40,7 @@ We tested five progressively different ways of asking the same investment questi
 - **3 LLM models**: GPT-5.2 Instant, Gemini 3.5 Flash, Claude Sonnet 4.6
 - **5 prompt conditions**: C1 through C5
 - **Total experiments**: 20 stocks × 3 models × 5 conditions = **300 LLM responses**
-- **Market data**: 6-month daily returns and covariance matrix fetched from yfinance (2025-12-19 to 2026-06-22)
+- **Market data**: 6-month daily returns and covariance matrix fetched from yfinance (2025-12-23 to 2026-06-22)
 
 Each LLM response included:
 - **Score**: integer from -2 (Strong Sell) to +2 (Strong Buy)
@@ -91,7 +91,7 @@ Each LLM response included:
 
 **What it shows:** A scatter plot comparing the average C1 baseline score each stock received from the LLMs against its actual 6-month stock return. A regression line is fitted across all stocks.
 
-**Why it matters:** This tells us whether the LLM recommendations were actually accurate. The Pearson correlation is r = 0.314 with p = 0.254 — not statistically significant. In other words, the LLMs' baseline recommendations were essentially uncorrelated with real-world performance. Notably, many Chinese stocks received Buy recommendations (Score = +1) despite losing 20–50% of their value over the period.
+**Why it matters:** This tells us whether the LLM recommendations were actually accurate. The Pearson correlation is r = 0.209 with p = 0.455 — not statistically significant. In other words, the LLMs' baseline recommendations were essentially uncorrelated with real-world performance. Notably, many Chinese stocks received Buy recommendations (Score = +1) despite losing 20–50% of their value over the period.
 
 ---
 
@@ -100,21 +100,21 @@ Each LLM response included:
 
 **What it shows:** (a) The actual portfolio return you would have achieved by using each prompt condition's LLM scores as inputs to a Mean-Variance Optimization (MVO) portfolio, compared to an equal-weight benchmark and an oracle (perfect foresight) portfolio. (b) The "regret" — how far each model/condition combination fell short of the oracle portfolio.
 
-**Why it matters:** This is the most practically important result. It applies the Decision-Focused Learning concept from the course: we're not just asking whether the predictions are accurate, but whether they lead to better investment decisions. C4 is the only condition to produce a positive portfolio return (+1.72%) and the lowest average regret (13.93%). Interestingly, C5 (Chain-of-Thought) actually produces the worst portfolio performance (-3.75%), suggesting that step-by-step reasoning may reinforce existing biases rather than correct them.
+**Why it matters:** This is the most practically important result. It applies the Decision-Focused Learning concept from the course: we're not just asking whether the predictions are accurate, but whether they lead to better investment decisions. C4 achieves the highest portfolio return (-1.08%) and the lowest average regret (11.01%) among all five conditions. C5 (Chain-of-Thought) produces the worst portfolio performance (-7.12%). One possible explanation is that step-by-step reasoning may reinforce existing preferences already present in the model rather than correcting them.
 
 ---
 
 ## Key Findings
 
-1. **Financial data injection (C4) is the most effective prompting strategy** — the only condition to produce both statistically significant score changes (p < 0.001) and positive portfolio returns (+1.72%). Simply telling the model "here is the data" outperforms all other strategies.
+1. **Financial data injection (C4) is the most effective prompting strategy** — the only condition to produce both statistically significant score changes (p < 0.001) and the best portfolio performance (-1.08%, regret 11.01%). Simply telling the model "here is the data" outperforms all other strategies.
 
-2. **Role prompting and metacognitive prompting have limited effect** — C2 and C3 do not produce statistically significant changes in scores, suggesting that adjusting the model's "mindset" through prompt framing is less effective than providing concrete information.
+2. **Role prompting and metacognitive prompting have limited effect on scores** — C2 and C3 do not produce statistically significant changes in scores (p = 0.709 and p = 0.057 respectively), suggesting that adjusting the model's "mindset" through prompt framing is less effective than providing concrete information.
 
-3. **Chain-of-Thought (C5) is a double-edged sword** — despite being a popular prompting technique, it produces the worst portfolio performance in this study (-3.75%), possibly because structured reasoning amplifies the model's existing biases rather than correcting them.
+3. **Chain-of-Thought (C5) produces the worst portfolio performance** — despite being a popular prompting technique, C5 yields the lowest portfolio return (-7.12%) and highest regret (17.05%). One possible explanation is that step-by-step reasoning reinforces the model's existing preferences rather than correcting them.
 
-4. **Models have distinct behavioral profiles** — Gemini is highly consistent but unresponsive to prompt changes; Claude is the most sensitive and drops confidence significantly under metacognitive prompting; GPT sits in between.
+4. **Models have distinct behavioral profiles** — Gemini is highly consistent but largely unresponsive to prompt changes (Confidence Std = 2.17); Claude is the most sensitive and drops confidence sharply under metacognitive prompting (Confidence Std = 8.78); GPT sits in between (Confidence Std = 5.38).
 
-5. **LLM predictions do not correlate with actual returns** (r = 0.314, p = 0.254), but prompt design still meaningfully affects downstream decision quality (regret ranges from 13.9% to 19.4%).
+5. **LLM predictions do not correlate with actual returns** (r = 0.209, p = 0.455), but prompt design still meaningfully affects downstream decision quality (regret ranges from 11.0% to 17.1%).
 
 ---
 
@@ -122,13 +122,13 @@ Each LLM response included:
 
 | Condition | Avg Score | Portfolio Return | Regret vs Oracle |
 |-----------|-----------|-----------------|-----------------|
-| C1 Baseline | 1.067 | -1.14% | 16.79% |
-| C2 Role Prompting | 1.050 | -1.29% | 16.93% |
-| C3 Metacognitive | 0.967 | -1.15% | 16.79% |
-| **C4 Financial Data** | **0.467** | **+1.72%** | **13.93%** |
-| C5 Chain-of-Thought | 1.083 | -3.75% | 19.39% |
+| C1 Baseline | 1.067 | -4.54% | 14.47% |
+| C2 Role Prompting | 1.050 | -4.60% | 14.53% |
+| C3 Metacognitive | 0.967 | -3.71% | 13.64% |
+| **C4 Financial Data** | **0.467** | **-1.08%** | **11.01%** |
+| C5 Chain-of-Thought | 1.083 | -7.12% | 17.05% |
 
-Oracle (perfect foresight): +15.64% &nbsp;|&nbsp; Equal Weight benchmark: -13.73%
+Oracle (perfect foresight): +9.93% &nbsp;|&nbsp; Equal Weight benchmark: -15.60%
 
 ---
 
@@ -182,10 +182,10 @@ This project used **Claude (Anthropic)** for brainstorming, code generation, deb
 
 ## References
 
-- Lee, H., Seo, J., Park, S., Lee, J., Ahn, W., Choi, C., Lopez-Lira, A., & Lee, Y. (2025). Your AI, Not Your View: The Bias of LLMs in Investment Analysis. *Proceedings of the 6th ACM International Conference on AI in Finance*, 150–158. 
+- Lee, H., Seo, J., Park, S., Lee, J., Ahn, W., Choi, C., Lopez-Lira, A., & Lee, Y. (2025). Your AI, Not Your View: The Bias of LLMs in Investment Analysis. *Proceedings of the 6th ACM International Conference on AI in Finance*, 150–158. https://dl.acm.org/doi/full/10.1145/3768292.3770375
   > Prior work demonstrating systematic LLM investment bias. Motivates this study and informs the design of the C3 Metacognitive prompt condition.
 
-- Lee, J., Jeon, H., Bae, H., & Lee, Y. (2025). Return Prediction for Mean-Variance Portfolio Selection: How Decision-Focused Learning Shapes Forecasting Models. *Proceedings of the 6th ACM International Conference on AI in Finance*, 114–122. 
+- Lee, J., Jeon, H., Bae, H., & Lee, Y. (2025). Return Prediction for Mean-Variance Portfolio Selection: How Decision-Focused Learning Shapes Forecasting Models. *Proceedings of the 6th ACM International Conference on AI in Finance*, 114–122. https://dl.acm.org/doi/full/10.1145/3768292.3770423
   > Source of the Decision-Focused Learning framework and MVO Regret concept. Directly applied in Figure 6 to evaluate downstream portfolio decision quality.
 
 - Markowitz, H. M. (1952). Portfolio Selection. *The Journal of Finance*, 7(1), 77–91.
