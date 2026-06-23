@@ -82,7 +82,7 @@ Each LLM response included:
 
 **What it shows:** A detailed heatmap of confidence scores for every combination of model, stock ticker, and prompt condition. Green = high confidence, red = low confidence.
 
-**Why it matters:** This makes the model behavior patterns immediately visible. Gemini's heatmap is almost entirely uniform green — it gives the same confidence to almost everything. Claude's heatmap shows a clear red column under C3 (Metacognitive), meaning that explicitly acknowledging uncertainty causes Claude to become much less confident across all stocks. GPT sits somewhere in between, with some variation but no dramatic drops.
+**Why it matters:** This makes the model behavior patterns immediately visible. Gemini's heatmap is almost entirely uniform green — it gives the same confidence to almost everything. Claude's heatmap shows a clear red column under C3 (Metacognitive), meaning that metacognitive prompting substantially reduced Claude's reported confidence across all stocks. GPT sits somewhere in between, with some variation but no dramatic drops.
 
 ---
 
@@ -106,9 +106,9 @@ Each LLM response included:
 
 ## Key Findings
 
-1. **Financial data injection (C4) is the most effective prompting strategy** — the only condition to produce both statistically significant score changes (p < 0.001) and the best portfolio performance (-1.08%, regret 11.01%). Simply telling the model "here is the data" outperforms all other strategies.
+1. **Among the tested conditions, C4 (Financial Data Injection) achieved the best portfolio outcome** — producing the highest portfolio return (-1.08%) and lowest regret (11.01%), as well as the only statistically significant score change (p < 0.001). Simply telling the model "here is the data" outperformed all other strategies in terms of downstream decision quality.
 
-2. **Role prompting and metacognitive prompting have limited effect on scores** — C2 and C3 do not produce statistically significant changes in scores (p = 0.709 and p = 0.057 respectively), suggesting that adjusting the model's "mindset" through prompt framing is less effective than providing concrete information.
+2. **Role prompting (C2) shows negligible effect, while metacognitive prompting (C3) shows modest improvement** — C2 (-4.60%) performs nearly identically to the baseline C1 (-4.54%), while C3 (-3.71%) shows a noticeable improvement in portfolio return. However, neither C2 nor C3 produces statistically significant score changes (p = 0.709 and p = 0.057 respectively), suggesting their effects are limited and inconsistent across models.
 
 3. **Chain-of-Thought (C5) produces the worst portfolio performance** — despite being a popular prompting technique, C5 yields the lowest portfolio return (-7.12%) and highest regret (17.05%). One possible explanation is that step-by-step reasoning reinforces the model's existing preferences rather than correcting them.
 
@@ -180,7 +180,18 @@ This project used **Claude (Anthropic)** for brainstorming, code generation, deb
 
 ---
 
-## References
+## Limitations
+
+- **Small sample for return analysis:** Portfolio performance and Pearson correlation analysis are based on only 15 stocks (10 Chinese, 5 US) with available market return data. Korean stocks were excluded due to data reliability issues. This limits the statistical power of the findings.
+- **Single market period:** All results are based on a single 6-month window (2025-12-23 to 2026-06-22). Portfolio performance conclusions may not generalize to other market conditions or time periods.
+- **Statistical test assumptions:** One-way ANOVA was applied to repeated observations across prompt conditions. A repeated-measures ANOVA would be more rigorous; this limitation is acknowledged in the interpretation of the ANOVA results.
+- **Score-to-return scaling:** LLM scores were converted to expected return proxies using a volatility-based linear scaling (score × σ_r / 2). This mapping is not theoretically unique and represents a simplification.
+- **DFL evaluation, not training:** This study applies the DFL concept of regret to evaluate prompt strategies, but does not implement end-to-end Decision-Focused Learning model training. The connection to DFL is therefore evaluative rather than methodological.
+- **LLM stochasticity:** LLM responses can vary across runs even with identical prompts. Each condition was queried once per stock-model pair; results may differ slightly under repeated sampling.
+
+---
+
+
 
 - Lee, H., Seo, J., Park, S., Lee, J., Ahn, W., Choi, C., Lopez-Lira, A., & Lee, Y. (2025). Your AI, Not Your View: The Bias of LLMs in Investment Analysis. *Proceedings of the 6th ACM International Conference on AI in Finance*, 150–158. https://dl.acm.org/doi/full/10.1145/3768292.3770375
   > Prior work demonstrating systematic LLM investment bias. Motivates this study and informs the design of the C3 Metacognitive prompt condition.
