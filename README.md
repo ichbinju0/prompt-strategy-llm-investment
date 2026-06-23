@@ -196,7 +196,7 @@ This project used **Claude (Anthropic)** for brainstorming, code generation, deb
 - **LLM stochasticity:** LLM responses can vary across runs even with identical prompts. Each condition was queried once per stock-model pair; results may differ slightly under repeated sampling.
 
 ---
-
+## References
 
 
 - Lee, H., Seo, J., Park, S., Lee, J., Ahn, W., Choi, C., Lopez-Lira, A., & Lee, Y. (2025). Your AI, Not Your View: The Bias of LLMs in Investment Analysis. *Proceedings of the 6th ACM International Conference on AI in Finance*, 150–158. https://dl.acm.org/doi/full/10.1145/3768292.3770375
