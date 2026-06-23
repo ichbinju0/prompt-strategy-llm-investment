@@ -197,13 +197,19 @@ This project used **Claude (Anthropic)** for brainstorming, code generation, deb
 
 ---
 ## References
+Lee, H., Seo, J., Park, S., Lee, J., Ahn, W., Choi, C., Lopez-Lira, A., & Lee, Y.
+(2025a). Your AI, Not Your View: The Bias of LLMs in Investment Analysis.
+Proceedings of the 6th ACM International Conference on AI in Finance, 150–158.
+https://dl.acm.org/doi/full/10.1145/3768292.3770375
 
+Lee, J., Jeon, H., Bae, H., & Lee, Y. (2025b). Return Prediction for Mean-
+Variance Portfolio Selection: How Decision-Focused Learning Shapes Forecasting
+Models. Proceedings of the 6th ACM International Conference on AI in Finance,
+114–122. https://dl.acm.org/doi/full/10.1145/3768292.3770423
 
-- Lee, H., Seo, J., Park, S., Lee, J., Ahn, W., Choi, C., Lopez-Lira, A., & Lee, Y. (2025). Your AI, Not Your View: The Bias of LLMs in Investment Analysis. *Proceedings of the 6th ACM International Conference on AI in Finance*, 150–158. https://dl.acm.org/doi/full/10.1145/3768292.3770375
-  > Prior work demonstrating systematic LLM investment bias. Motivates this study and informs the design of the C3 Metacognitive prompt condition.
+Kim, Y., Lee, Y., Kim, J., & Lee, Y. (2025). GuruAgents: Emulating Wise Investors
+with Prompt-Guided LLM Agents. Proceedings of the 34th ACM International
+Conference on Information and Knowledge Management (CIKM '25), Seoul,
+Republic of Korea. https://arxiv.org/abs/2510.01664
 
-- Lee, J., Jeon, H., Bae, H., & Lee, Y. (2025). Return Prediction for Mean-Variance Portfolio Selection: How Decision-Focused Learning Shapes Forecasting Models. *Proceedings of the 6th ACM International Conference on AI in Finance*, 114–122. https://dl.acm.org/doi/full/10.1145/3768292.3770423
-  > Source of the Decision-Focused Learning framework and MVO Regret concept. Directly applied in Figure 6 to evaluate downstream portfolio decision quality.
-
-- Markowitz, H. M. (1952). Portfolio Selection. *The Journal of Finance*, 7(1), 77–91.
-  > Original Mean-Variance Optimization formulation. Directly implemented in the portfolio construction step.
+Markowitz, H. M. (1952). Portfolio Selection. The Journal of Finance, 7(1), 77–91.
